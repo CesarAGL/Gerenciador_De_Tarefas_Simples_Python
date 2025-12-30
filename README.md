@@ -3,4 +3,4 @@ Projeto simples em python que permite:
 - listar tarefas
 - remover tarefas
 - marcar tarefas como concluidas
-- persistência em arquivi txt
+- persistência em arquivo txt
