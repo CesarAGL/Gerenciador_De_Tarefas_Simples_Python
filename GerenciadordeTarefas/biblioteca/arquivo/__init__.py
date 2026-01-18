@@ -1,11 +1,7 @@
 from GerenciadordeTarefas.biblioteca.interface import *
 
 def arquivoexiste(nome):
-    """
-    Verifica se o arquivo existe no diretório
-    :param nome: nome ou caminho do arquivo
-    :return: True se existir, caso contrário, False
-    """
+    
     try:
         abrir =open(nome, 'rt')
         abrir.close()
@@ -15,12 +11,7 @@ def arquivoexiste(nome):
         return True
 
 def criarArquivo(nome):
-    """
-    Cria um novo arquivo vazio
-
-    :param nome: Nome que será dado ao arquivo criado
-    """
-
+    
     try:
         a = open(nome, 'wt+')
         a.close()
@@ -30,13 +21,7 @@ def criarArquivo(nome):
         print(f'Arquivo {nome} criado com sucesso!')
 
 def criarTarefa(arquivo, nome = 'Tarefa 1', estado = 'pendente'):
-    """
-    Adiciona uma nova tarefa ao arquivo
-
-    :param arquivo: onde as tarefas serão armazenadas
-    :param nome: nome da tarefa
-    :param estado: estado inicial em que se encontra a tarefa (pendente/em execução/concluida)
-    """
+    
     try:
         abrir = open(arquivo, 'at', encoding='utf-8')
     except:
@@ -52,12 +37,7 @@ def criarTarefa(arquivo, nome = 'Tarefa 1', estado = 'pendente'):
 
 
 def removerTarefa(arquivo, tarefa):
-    """
-    Remove uma tarefa do arquivo, caso ele exista
-
-    :param arquivo: arquivo com as tarefas
-    :param tarefa:  nome da tarefa que será removida
-    """
+    
     temporarias = []
     removida = False
 
@@ -86,11 +66,7 @@ def removerTarefa(arquivo, tarefa):
         print(f'Tarefa "{tarefa}" não encontrada.')
 
 def listarTarefas(nome):
-    """
-    Lista todas as tarefas armazendas no arquivo
-
-    :param nome: arquivo de tarefas
-    """
+    
     try:
         abrir = open(nome, 'rt')
     except:
@@ -106,12 +82,7 @@ def listarTarefas(nome):
 
 
 def marcarConcluida(arquivo, nome):
-    """
-    Muda o estado de uma tarefa para concluida, caso ela exista ou já não esteja concluida
-
-    :param arquivo: arquivo de tarefas
-    :param nome: nome da tarefa a ser marcada
-    """
+    
     tarefas = []
     encontrada = False
 
